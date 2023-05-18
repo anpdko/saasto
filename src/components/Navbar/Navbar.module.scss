@@ -1,0 +1,22 @@
+.nav {
+   padding: 30px 40px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   .logo {
+      height: 40px;
+   }
+
+   .menu {
+      display: flex;
+      gap: 50px;
+      font-size: 18px;
+      line-height: 24px;
+      list-style: none;
+
+      li{
+         cursor: pointer;
+      }
+   }
+}
