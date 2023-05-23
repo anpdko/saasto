@@ -22,6 +22,16 @@ import imgIconClock from './Group.png'
 import imgIconCalendar from './calendar (3) 1.png'
 import imgIconDashboard from './Frame.png'
 
+import imgMinutes from './45-minutes 1.png'
+import imgHourglass from './hourglass 1.png'
+import imgWallet from './wallet (2) 1.png'
+import imgNewspaper from './3D Image.png'
+import imgDarts from './3D Image (1).png'
+import imgTrackerScreen1 from './Kit 1 (1).png'
+import imgTrackerScreen2 from './Kit 2 (1).png'
+import imgTrackerScreen3 from './Kit 3 (1).png'
+
+
 
 export {
    imgClipBoard, 
@@ -42,5 +52,14 @@ export {
 
    imgIconClock,
    imgIconCalendar,
-   imgIconDashboard
+   imgIconDashboard,
+
+   imgMinutes,
+   imgHourglass,
+   imgWallet,
+   imgNewspaper,
+   imgDarts,
+   imgTrackerScreen1,
+   imgTrackerScreen2,
+   imgTrackerScreen3
 }

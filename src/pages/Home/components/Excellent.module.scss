@@ -1,0 +1,143 @@
+.some_excellent {
+   z-index: 2;
+   padding-bottom: 70px;
+   overflow: hidden;
+
+   .title_description {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding-top: 170px;
+
+      .content {
+         position: relative;
+
+         .img_3d_rocket {
+            width: 20%;
+            right: calc(-20% - 50px);
+            position: absolute;
+            top: 0;
+         }
+      }
+
+      svg {
+         position: absolute;
+         left: -70px;
+         top: 20px;
+      }
+
+   }
+
+   .cards {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding-top: 64px;
+
+      .card {
+         cursor: pointer;
+
+         .box_img {
+            width: 90px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            box-shadow: 14px 20px 48px rgba(25, 15, 44, 0.06), inset 0px 1px 1px 1px #ffffffb0;
+
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 24px;
+         }
+
+         h3 {
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: #FFFFFF;
+            margin: 25px 0 10px 0;
+         }
+
+         p {
+            font-family: 'Inter';
+            font-weight: 400;
+            font-size: 1rem;
+            color: #FFFFFF;
+            opacity: 0.8;
+            margin: 0;
+         }
+      }
+
+      .card {
+         padding: 30px;
+
+         background: #70D0DC;
+         box-shadow: 14px 20px 48px rgba(25, 15, 44, 0.06);
+         border-radius: 48px;
+      }
+
+      .card:nth-child(2) {
+         background: #7562E0;
+         box-shadow: 14px 20px 48px rgba(25, 15, 44, 0.06);
+      }
+
+      .card:nth-child(3) {
+         background: #FA865F;
+         box-shadow: 14px 20px 48px rgba(25, 15, 44, 0.06);
+      }
+   }
+}
+
+@media screen and (max-width: 920px) {
+   .some_excellent {
+      padding-bottom: 60px;
+
+      .title_description {
+         padding-top: 100px;
+
+         svg {
+            position: absolute;
+            width: 100px;
+            left: -70px;
+            top: 20px;
+         }
+      }
+
+      .cards {
+         flex-direction: column;
+         align-items: center;
+         gap: 10px;
+         padding-top: 30px;
+
+         .card {
+            display: grid;
+            grid-template-columns: 130px auto;
+            max-width: 700px;
+
+            h3 {
+               margin: 10px 0 0 0;
+            }
+
+            .box_img {
+               grid-row: 1 / 3;
+               align-self: center;
+            }
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 500px) {
+   .some_excellent {
+
+      .cards {
+
+         .card {
+            grid-template-columns: 110px auto;
+            padding: 20px;
+            border-radius: 38px;
+         }
+      }
+   }
+}

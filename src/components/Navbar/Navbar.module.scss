@@ -1,22 +1,46 @@
-.nav {
-   padding: 30px 40px;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
+.back {
+   background: #FFF8F2;
 
-   .logo {
-      height: 40px;
-   }
-
-   .menu {
+   .nav {
+      padding: 30px 0;
       display: flex;
-      gap: 50px;
-      font-size: 18px;
-      line-height: 24px;
-      list-style: none;
+      justify-content: space-between;
+      align-items: center;
 
-      li{
-         cursor: pointer;
+      .logo {
+         height: 2.2rem;
+      }
+
+      .menu {
+         display: flex;
+         gap: 2.7rem;
+         font-size: 1rem;
+         line-height: 24px;
+         list-style: none;
+
+         li {
+            cursor: pointer;
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 1080px) {
+   .back {
+      .nav {
+         .menu {
+            gap: 2rem;
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 920px) {
+   .back {
+      .nav {
+         .menu {
+            display: none;
+         }
       }
    }
 }
