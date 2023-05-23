@@ -146,8 +146,27 @@
 
                .item {
                   margin-top: 30px;
+
                   p {
                      max-width: 700px;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 500px) {
+   .analytics {
+      .analytics_grid {
+         margin: 50px 0 50px 0;
+         .box_content {
+            .list {
+               .item {
+
+                  h3 {
+                     font-size: 1.3rem;
                   }
                }
             }

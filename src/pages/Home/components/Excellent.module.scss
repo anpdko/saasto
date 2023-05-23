@@ -130,9 +130,10 @@
 
 @media screen and (max-width: 500px) {
    .some_excellent {
-
+      .title_description {
+         padding-top: 70px;
+      }
       .cards {
-
          .card {
             grid-template-columns: 110px auto;
             padding: 20px;

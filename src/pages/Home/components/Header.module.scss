@@ -183,3 +183,32 @@
       }
    }
 }
+
+@media screen and (max-width: 560px) {
+   .header {
+
+      .content{
+         margin-block: 70px;
+      }
+      .box_expertises{
+         gap: 0;
+         height: auto;
+         width: 100%;
+         flex-direction: column;
+         padding-top: 40px;
+         align-items: center;
+
+         .box_exp:nth-child(n):not(:last-child) {
+            border-bottom: 1px solid rgba(30, 12, 62, 0.2);
+            padding-bottom: 30px;
+            width: 150px;
+          }
+         
+         .box_exp{
+            h2{
+               font-size: 4rem;
+            }
+         }
+      }
+   }
+}
