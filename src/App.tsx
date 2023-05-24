@@ -1,11 +1,14 @@
 import React, {useEffect} from 'react';
 import './App.css';
 import Home from './pages/Home/Home';
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
 
   useEffect(() => {
-
     const paths:NodeListOf<SVGPathElement> = document.querySelectorAll('path');
     if(paths.length > 0){
       for(let path of paths) {

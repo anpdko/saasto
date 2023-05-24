@@ -1,10 +1,57 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import s from './Excellent.module.scss'
-
 import { svgAlarm2} from '../../../assets/svg'
 import { imgTaskLists, imgBell, imgAgenda, img3dRocket } from '../../../assets/images'
+import gsap from 'gsap'
 
 const Excellent = () => {
+
+   useEffect(() => {
+
+      gsap.from(`.${s.card}`, {
+         opacity: 0,
+         y: 100,
+         stagger: 0.2,
+         duration: 0.5,
+         ease: 'power3.out',
+         scrollTrigger: {
+            trigger: `.${s.cards}`,
+            // markers: true,
+            start: "top 95%",
+            end: "bottom 60%",
+            scrub: true,
+         }
+      });
+
+      gsap.from(`.${s.content}`, {
+         opacity: 0,
+         y: 100,
+         stagger: 0.2,
+         duration: 2,
+         ease: 'power3.out',
+         scrollTrigger: {
+            trigger: `.${s.cards}`,
+            // markers: true,
+            start: "top 100%",
+         }
+      });
+
+      gsap.from(`.${s.img_3d_rocket}`, {
+         opacity: 0,
+         y: 300,
+         x: -300,
+         stagger: 0.2,
+         duration: 4,
+         ease: 'power3.out',
+         scrollTrigger: {
+            trigger: `.${s.cards}`,
+            // markers: true,
+            start: "top 100%",
+         }
+      });
+
+   }, [])
+
    return (
       <section className={s.some_excellent}>
          <div className='container'>
