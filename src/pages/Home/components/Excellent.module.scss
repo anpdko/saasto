@@ -107,7 +107,7 @@
       .cards {
          flex-direction: column;
          align-items: center;
-         gap: 10px;
+         gap: 30px;
          padding-top: 30px;
 
          .card {
@@ -134,10 +134,15 @@
          padding-top: 70px;
       }
       .cards {
+         gap: 20px;
          .card {
-            grid-template-columns: 110px auto;
-            padding: 20px;
+            grid-template-columns: 95px auto;
+            padding: 15px;
             border-radius: 38px;
+
+            .box_img {
+               width: 80px;
+            }
          }
       }
    }

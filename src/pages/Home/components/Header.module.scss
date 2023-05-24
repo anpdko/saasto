@@ -187,6 +187,49 @@
 @media screen and (max-width: 560px) {
    .header {
 
+      .back {
+         .left,
+         .right {
+            margin-top: -350px;
+            width: 70%;
+         }
+   
+         .left {
+            left: 35%;
+            top: 30px;
+   
+            .mobile_screen_1 {
+              display: none;
+            }
+   
+            .alarm_clock_2 {
+               right: 20%;
+
+               svg {
+                  width: 100%;
+                  bottom: 0%;
+                  right: 100%;
+               }
+            }
+         }
+   
+   
+         .right {
+            transform: scale(-1, 1);
+            
+            .clip_board {
+               right: -40%;
+            }
+   
+            .mobile_screen_2 {
+               display: none;
+            }
+         }
+      }
+
+
+
+
       .content{
          margin: 0;
          padding-block: 70px;
