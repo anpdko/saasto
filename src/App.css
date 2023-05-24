@@ -27,11 +27,12 @@ h1 {
    margin-block: 20px 0;
 }
 
-.title.center, .text.center{
+.title.center,
+.text.center {
    text-align: center;
 }
 
-.main_title{
+.main_title {
    max-width: 800px;
    font-weight: 700;
    font-size: 3.5rem;
@@ -69,20 +70,22 @@ h1 {
    }
 }
 
-@media screen and (max-width: 920px){
-   .title, .text{
+@media screen and (max-width: 920px) {
+
+   .title,
+   .text {
       text-align: center;
       margin: 15px auto 0 auto;
    }
 }
 
 
-@media screen and (max-width: 720px){
+@media screen and (max-width: 720px) {
    html {
       font-size: 15px;
    }
 
-   .main_title{
+   .main_title {
       font-size: 2.5rem;
       line-height: 4rem;
    }
@@ -92,11 +95,24 @@ h1 {
    }
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 500px) {
    .title {
       font-size: 2rem;
    }
+
    .container {
       padding: 0px 20px;
    }
 }
+
+
+ .path {
+   animation: draw 1s cubic-bezier(0.62, 0.17, 0.56, 1.33) forwards;
+ }
+
+@keyframes draw {
+   to {
+      stroke-dashoffset: 0;
+   }
+}
+ 

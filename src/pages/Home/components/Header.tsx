@@ -5,6 +5,7 @@ import { svgRhomb, svgAlarm, svgArrow, svgVibration} from '../../../assets/svg'
 import { imgClipBoard, imgMobileScreen1, imgMobileScreen2, imgAlarmClock2 } from '../../../assets/images'
 import gsap from 'gsap'
 
+
 const Header = () => {
    
    useEffect(()=>{
@@ -12,6 +13,7 @@ const Header = () => {
       gsap.from('.main_text', { delay:0.4, duration: 2, opacity: 0, ease: 'power2.out' })
 
       gsap.from('.btn', { delay:0.3, duration: 1.5, y: 50, opacity: 0, ease: 'power2.out' })
+
    })
    return (
       <header className={s.header}>
