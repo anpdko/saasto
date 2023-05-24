@@ -1,19 +1,28 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import s from './Header.module.scss'
-
 import Button from '../../../components/UI/Button/Button'
 import { svgRhomb, svgAlarm, svgArrow, svgVibration} from '../../../assets/svg'
-import {
-   imgClipBoard, imgMobileScreen1, imgMobileScreen2, imgAlarmClock2} from '../../../assets/images'
+import { imgClipBoard, imgMobileScreen1, imgMobileScreen2, imgAlarmClock2 } from '../../../assets/images'
+import gsap from 'gsap'
 
 const Header = () => {
+   
+   useEffect(()=>{
+      gsap.from('.main_title', { delay:0.2, duration: 1.5  , y: -100, opacity: 0, ease: 'power2.out' })
+      gsap.from('.main_text', { delay:0.4, duration: 2, opacity: 0, ease: 'power2.out' })
+
+      gsap.from('.btn', { delay:0.3, duration: 1.5, y: 50, opacity: 0, ease: 'power2.out' })
+   })
    return (
       <header className={s.header}>
             <div className='container'>
                <div className={s.content}>
                   <h1 className='main_title'>A collaborative  Time Tracking that you Need</h1>
                   <p className='main_text'>An enim nullam tempor sapien gravida donec enim ipsum porta justo  congue magna at pretium purus pretium ligula </p>
-                  <Button>Start 14 Days Trial</Button>
+                  <div className='btn'>
+                     <Button>Start 14 Days Trial</Button>
+                  </div>
+                  
                </div>
             </div>
             <div className={s.back}>
