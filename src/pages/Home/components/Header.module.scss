@@ -17,6 +17,11 @@
 
       svg {
          position: absolute;
+
+         path{
+            stroke-width: 4;
+            opacity: 0.3;
+         }
       }
 
       .left,
@@ -188,6 +193,14 @@
    .header {
 
       .back {
+
+         svg {
+            path{
+               stroke-width: 5;
+               opacity: 0.5;
+            }
+         }
+
          .left,
          .right {
             margin-top: -350px;
@@ -206,8 +219,8 @@
                right: 20%;
 
                svg {
-                  width: 100%;
-                  bottom: 0%;
+                  width: 140%;
+                  bottom: 10%;
                   right: 100%;
                }
             }
