@@ -8,8 +8,8 @@ import gsap from 'gsap'
 const Navbar = () => {
    
    useEffect(()=>{
-      gsap.from([`.${s.logo}`, `.${s.btns}`], { delay:0.1, duration: 1.2, opacity: 0, y: -20, ease: 'power2.out' })
-      gsap.from(`.${s.menu} li`, { delay:0.1, duration: 1, opacity:0, x: 30, stagger: 0.3, ease: 'power2.out' })
+      gsap.from([`.${s.logo}`, `.${s.btns}`], { delay:0.1, duration: 1.2, opacity: 0, y: -20, ease: 'power3.out' })
+      gsap.from(`.${s.menu} li`, { delay:0.1, duration: 1, opacity:0, x: 30, stagger: 0.3, ease: 'power3.out' })
    }, [])
 
    return (

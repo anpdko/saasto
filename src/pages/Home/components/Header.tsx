@@ -1,29 +1,36 @@
-import React, { useEffect } from 'react'
+import React, { useEffect} from 'react'
 import s from './Header.module.scss'
 import Button from '../../../components/UI/Button/Button'
 import { svgRhomb, svgAlarm, svgArrow, svgVibration } from '../../../assets/svg'
 import { imgClipBoard, imgMobileScreen1, imgMobileScreen2, imgAlarmClock2 } from '../../../assets/images'
 import gsap from 'gsap'
-import useIncNumber from '../../../hooks/useIncNumber'
+import useIncScrollNumber from '../../../hooks/useIncScrollNumber'
 
 
 const ExpertisesData = () => {
-   const activeUser = useIncNumber(15, 1000)
-   const totalDownload = useIncNumber(30, 1000)
-   const customer = useIncNumber(10, 1000)
+   const activeUserRef = useIncScrollNumber(15)
+   const totalDownloadRef = useIncScrollNumber(20)
+   const customerRef = useIncScrollNumber(10)
+
 
    return (
       <div className={s.box_expertises}>
          <div className={s.box_exp}>
-            <h2 className='title'>{activeUser}k+</h2>
+            <h2 className='title'>
+               <span ref={activeUserRef}>0</span>k+
+            </h2>
             <p>Active user</p>
          </div>
          <div className={s.box_exp}>
-            <h2 className='title'>{totalDownload}k</h2>
+            <h2 className='title'>
+               <span ref={totalDownloadRef} >0</span>k
+            </h2>
             <p>Total Download</p>
          </div>
          <div className={s.box_exp}>
-            <h2 className='title'>{customer}k</h2>
+            <h2 className='title'>
+               <span ref={customerRef} >0</span>k
+            </h2>
             <p>Customer</p>
          </div>
       </div>
@@ -43,23 +50,6 @@ const Header = () => {
 
       gsap.from(`.${s.mobile_screen_2} img`, { delay: 0.1, duration: 1.5, y: 100, x: 250, opacity: 0.8, ease: 'power3.out' })
       gsap.from(`.${s.clip_board} img`, { delay: 0.3, duration: 1.2, y: -50, x: 100, opacity: 0, ease: 'power3.out' })
-
-      gsap.from(`.${s.box_exp}`, {
-         opacity: 0,
-         y: 100,
-         stagger: 0.2,
-         duration: 0.5,
-         ease: 'power3.out',
-         scrollTrigger: {
-            trigger: `.${s.box_exp}`,
-            markers: true,
-            start: "top 95%",
-            onEnter: () => {
-               // Действие, которое будет выполнено после окончания анимации
-               console.log("Анимация завершена. Выполняется дополнительное действие.");
-            }
-         }
-      });
    })
 
    return (
@@ -97,8 +87,8 @@ const Header = () => {
                </div>
             </div>
 
-            <ExpertisesData/>
-            
+            <ExpertisesData />
+
          </div>
       </header>
    );
