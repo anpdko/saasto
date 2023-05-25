@@ -40,21 +40,21 @@ const scrollTriggerText = (classElem:string, triggerElem:string, setting?:ISetti
    });
 };
 
-const scrollTriggerItems = (classElems:string, triggerElem:string, onEnter?:()=>void) => {
+const scrollTriggerItems = (classElems:string, triggerElem:string, setting?:ISetting) => {
    gsap.from(classElems, {
       opacity: 0,
       y: 100,
       stagger: 0.3,
       duration: 0.5,
       ease: 'power3.out',
+      ...setting,
       scrollTrigger: {
          trigger: triggerElem,
          // markers: true,
          start: "top 95%",
          end: "bottom 60%",
-         scrub: 1,
-         onEnter: onEnter
-      }
+         scrub: 1
+       }
    });
 };
 

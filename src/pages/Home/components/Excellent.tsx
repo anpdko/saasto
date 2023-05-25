@@ -7,10 +7,7 @@ import { scrollTriggerTitle, scrollTriggerText, scrollTriggerItems } from '../..
 
 const Excellent = () => {
    useEffect(() => {
-      scrollTriggerItems(`.${s.card}`, `.${s.cards}`, () => {
-         let svgElem = document.querySelector(`.${s.title_description} path`)
-         if(svgElem) svgElem.classList.add('path') 
-      })
+      scrollTriggerItems(`.${s.card}`, `.${s.cards}`)
       scrollTriggerTitle(`.${s.content} .title`, `.${s.content}`,)
       scrollTriggerText(`.${s.content} .text`, `.${s.content}`)
 
@@ -26,6 +23,10 @@ const Excellent = () => {
             trigger: `.${s.cards}`,
             // markers: true,
             start: "top 100%",
+            onEnter: () => {
+               let svgElem = document.querySelector(`.${s.title_description} path`)
+               if(svgElem) svgElem.classList.add('path') 
+            }
          }
       });
 
