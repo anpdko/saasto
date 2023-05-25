@@ -1,12 +1,19 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import s from './Analytics.module.scss'
+// import gsap from 'gsap'
+import { scrollTriggerTitle, scrollTriggerText, scrollTriggerItems } from '../../../services/gsap'
 
-import {
-   imgMobileScreen, imgListCheck, imgKit1, imgKit2, imgKit3,
-   imgIconClock, imgIconCalendar, imgIconDashboard
-} from '../../../assets/images'
+import {imgMobileScreen, imgListCheck, imgKit1, imgKit2, imgKit3, 
+   imgIconClock, imgIconCalendar, imgIconDashboard } from '../../../assets/images'
 
 const Analytics = () => {
+
+   useEffect(() => {
+      scrollTriggerItems(`.${s.item}`, `.${s.list}`)
+      scrollTriggerTitle(`.${s.box_content} .title`, `.${s.box_content}`, {x: 120, y: 0})
+      scrollTriggerText(`.${s.box_content} .text`, `.${s.box_content}`)
+   }, [])
+
    return (
       <section className={s.analytics}>
          <div className='container'>

@@ -12,7 +12,6 @@ const ExpertisesData = () => {
    const totalDownloadRef = useIncScrollNumber(20)
    const customerRef = useIncScrollNumber(10)
 
-
    return (
       <div className={s.box_expertises}>
          <div className={s.box_exp}>

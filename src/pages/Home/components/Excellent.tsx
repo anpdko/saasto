@@ -3,38 +3,17 @@ import s from './Excellent.module.scss'
 import { svgAlarm2} from '../../../assets/svg'
 import { imgTaskLists, imgBell, imgAgenda, img3dRocket } from '../../../assets/images'
 import gsap from 'gsap'
+import { scrollTriggerTitle, scrollTriggerText, scrollTriggerItems } from '../../../services/gsap'
 
 const Excellent = () => {
-
    useEffect(() => {
+      scrollTriggerItems(`.${s.card}`, `.${s.cards}`, () => {
+         let svgElem = document.querySelector(`.${s.title_description} path`)
+         if(svgElem) svgElem.classList.add('path') 
+      })
+      scrollTriggerTitle(`.${s.content} .title`, `.${s.cards}`,)
+      scrollTriggerText(`.${s.content} .text`, `.${s.cards}`)
 
-      gsap.from(`.${s.card}`, {
-         opacity: 0,
-         y: 100,
-         stagger: 0.2,
-         duration: 0.5,
-         ease: 'power3.out',
-         scrollTrigger: {
-            trigger: `.${s.cards}`,
-            // markers: true,
-            start: "top 95%",
-            end: "bottom 60%",
-            scrub: true,
-         }
-      });
-
-      gsap.from(`.${s.content}`, {
-         opacity: 0,
-         y: 100,
-         stagger: 0.2,
-         duration: 2,
-         ease: 'power3.out',
-         scrollTrigger: {
-            trigger: `.${s.cards}`,
-            // markers: true,
-            start: "top 100%",
-         }
-      });
 
       gsap.from(`.${s.img_3d_rocket}`, {
          opacity: 0,
