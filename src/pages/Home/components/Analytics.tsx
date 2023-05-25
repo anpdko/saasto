@@ -9,7 +9,7 @@ import {imgMobileScreen, imgListCheck, imgKit1, imgKit2, imgKit3,
 const Analytics = () => {
 
    useEffect(() => {
-      scrollTriggerItems(`.${s.item}`, `.${s.list}`)
+      scrollTriggerItems(`.${s.card}`, `.${s.list}`)
       scrollTriggerTitle(`.${s.box_content} .title`, `.${s.box_content}`, {x: 120, y: 0})
       scrollTriggerText(`.${s.box_content} .text`, `.${s.box_content}`)
    }, [])
