@@ -11,8 +11,8 @@ const Excellent = () => {
          let svgElem = document.querySelector(`.${s.title_description} path`)
          if(svgElem) svgElem.classList.add('path') 
       })
-      scrollTriggerTitle(`.${s.content} .title`, `.${s.cards}`,)
-      scrollTriggerText(`.${s.content} .text`, `.${s.cards}`)
+      scrollTriggerTitle(`.${s.content} .title`, `.${s.content}`,)
+      scrollTriggerText(`.${s.content} .text`, `.${s.content}`)
 
 
       gsap.from(`.${s.img_3d_rocket}`, {

@@ -11,6 +11,10 @@ h1 {
    color: #18063C;
 }
 
+.App{
+   overflow: hidden;
+}
+
 .title {
    font-family: 'Poppins';
    font-style: normal;
