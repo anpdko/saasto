@@ -44,7 +44,7 @@ const scrollTriggerItems = (classElems:string, triggerElem:string, setting?:ISet
    gsap.from(classElems, {
       opacity: 0,
       y: 100,
-      stagger: 0.3,
+      stagger: 0.2,
       duration: 0.5,
       ease: 'power3.out',
       ...setting,
@@ -53,7 +53,7 @@ const scrollTriggerItems = (classElems:string, triggerElem:string, setting?:ISet
          // markers: true,
          start: "top 95%",
          end: "bottom 60%",
-         scrub: 1
+         scrub: 1.5
        }
    });
 };

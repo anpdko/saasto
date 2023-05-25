@@ -1,17 +1,65 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import s from './Analytics.module.scss'
-// import gsap from 'gsap'
+import gsap from 'gsap'
 import { scrollTriggerTitle, scrollTriggerText, scrollTriggerItems } from '../../../services/gsap'
 
-import {imgMobileScreen, imgListCheck, imgKit1, imgKit2, imgKit3, 
-   imgIconClock, imgIconCalendar, imgIconDashboard } from '../../../assets/images'
+import {
+   imgMobileScreen, imgListCheck, imgKit1, imgKit2, imgKit3,
+   imgIconClock, imgIconCalendar, imgIconDashboard
+} from '../../../assets/images'
 
 const Analytics = () => {
 
    useEffect(() => {
       scrollTriggerItems(`.${s.card}`, `.${s.list}`)
-      scrollTriggerTitle(`.${s.box_content} .title`, `.${s.box_content}`, {x: 120, y: 0})
+      scrollTriggerTitle(`.${s.box_content} .title`, `.${s.box_content}`, { x: 120, y: 0 })
       scrollTriggerText(`.${s.box_content} .text`, `.${s.box_content}`)
+
+      gsap.from(`.${s.mobile_screen}`, {
+         delay: 0.4,
+         duration: 2,
+         x: -100,
+         opacity: 0,
+         ease: 'power3.out',
+         scrollTrigger: {
+            trigger: `.${s.mobile_screen}`,
+            start: "top 90%",
+            end: "bottom 50%",
+            scrub: 2,
+         }
+      });
+
+
+      const scrollTriggerImg = {
+         trigger: `.${s.mobile_screen}`,
+         start: "center 60%",
+         end: "center 55%",
+         markers: true,
+         scrub: 2,
+      }
+
+      gsap.from(`.${s.list_check}`, {
+         x: -150,
+         y: 150,
+         scale: 0.3,
+         opacity: 0,
+         ease: 'power3.out',
+         scrollTrigger: scrollTriggerImg
+      });
+
+      gsap.from(`.${s.kit_1}`, {
+         x: 150,
+         opacity: 0,
+         ease: 'power3.out',
+         scrollTrigger: scrollTriggerImg
+      });
+
+      gsap.from([`.${s.kit_2}`, `.${s.kit_3}`,], {
+         x: -150,
+         opacity: 0,
+         ease: 'power3.out',
+         scrollTrigger: scrollTriggerImg
+      });
    }, [])
 
    return (
