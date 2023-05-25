@@ -36,8 +36,8 @@ const Analytics = () => {
 
       const scrollTriggerImg = {
          trigger: `.${s.mobile_screen}`,
-         start: "center 60%",
-         end: "center 55%",
+         start: "bottom bottom",
+         end: "bottom bottom",
          // markers: true,
          scrub: 2,
       }
