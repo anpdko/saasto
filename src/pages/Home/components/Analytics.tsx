@@ -33,7 +33,7 @@ const Analytics = () => {
                   <h1 className='title'>Analytics & Reporting Brackdown</h1>
                   <p className='text'>An enim nullam tempor sapien gravida donec enim ipsum porta justo  congue magna at pretium purus pretium ligula </p>
                   <div className={s.list}>
-                     <div className={s.item}>
+                     <div className={s.card}>
                         <div className={s.item_img_box}>
                            <img src={imgIconClock} alt="Icon Clock" />
                         </div>
@@ -43,7 +43,7 @@ const Analytics = () => {
                            <p>Time Tracking is never been easier. Just let the stopwatch run</p>
                         </div>
                      </div>
-                     <div className={s.item}>
+                     <div className={s.card}>
                         <div className={s.item_img_box}>
                            <img src={imgIconDashboard} alt="Icon Clock" />
                         </div>
@@ -52,7 +52,7 @@ const Analytics = () => {
                            <p>Time Tracking is never been easier. Just let the stopwatch run</p>
                         </div>
                      </div>
-                     <div className={s.item}>
+                     <div className={s.card}>
                         <div className={s.item_img_box}>
                            <img src={imgIconCalendar} alt="Icon Clock" />
                         </div>
