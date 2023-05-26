@@ -4,7 +4,6 @@ import { svgArrowRight, svgArrowLeft } from '../../../assets/svg'
 import {imgMinutes, imgHourglass, imgWallet, imgNewspaper, imgDarts,
    imgTrackerScreen1, imgTrackerScreen2, imgTrackerScreen3} from '../../../assets/images'
 import { scrollTriggerTitle, scrollTriggerText, scrollTriggerItems, scrollTriggerSide } from '../../../services/gsap'
-import gsap from 'gsap'
 
 const Tracker = () => {
 
