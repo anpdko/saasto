@@ -1,20 +1,31 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import s from './Tracker.module.scss'
-
 import { svgArrowRight, svgArrowLeft } from '../../../assets/svg'
-import {
-   imgMinutes, imgHourglass, imgWallet, imgNewspaper, imgDarts,
-   imgTrackerScreen1, imgTrackerScreen2, imgTrackerScreen3,
-} from '../../../assets/images'
-
+import {imgMinutes, imgHourglass, imgWallet, imgNewspaper, imgDarts,
+   imgTrackerScreen1, imgTrackerScreen2, imgTrackerScreen3} from '../../../assets/images'
+import { scrollTriggerTitle, scrollTriggerText, scrollTriggerItems, scrollTriggerSide } from '../../../services/gsap'
+import gsap from 'gsap'
 
 const Tracker = () => {
+
+   useEffect(() => {
+      scrollTriggerItems(`.${s.card}`, `.${s.cards}`)
+      scrollTriggerTitle(`.${s.tracker_container} .title`, `.${s.tracker_container}`, { x: -120, y: 0 })
+      scrollTriggerText(`.${s.tracker_container} .text`, `.${s.tracker_container}`)
+
+      scrollTriggerSide('#img_newspaper', `.${s.cards}`, { y: -500, x: -300 });
+      scrollTriggerSide('#img_darts', `.${s.cards}`, { y: 500, x: 300 });
+
+      scrollTriggerItems(`.${s.imgs} .${s.img}`, `.${s.imgs}`, {scale: 0, y: -150, stagger: 0.1})
+
+   }, [])
+
    return (
       <section className={s.tracker_work}>
       <div className={`${s.tracker_container} container`}>
          <div className={s.position}>
-            <img src={imgNewspaper} alt="imgNewspaper" />
-            <img src={imgDarts} alt="imgDarts" />
+            <img src={imgNewspaper} alt="imgNewspaper" id='img_newspaper'/>
+            <img src={imgDarts} alt="imgDarts" id='img_darts'/>
          </div>
 
          <h1 className='title'>How our Tracker work for you</h1>

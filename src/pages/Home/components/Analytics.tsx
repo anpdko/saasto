@@ -2,11 +2,8 @@ import React, { useEffect, useRef } from 'react'
 import s from './Analytics.module.scss'
 import gsap from 'gsap'
 import { scrollTriggerTitle, scrollTriggerText, scrollTriggerItems } from '../../../services/gsap'
-
-import {
-   imgMobileScreen, imgListCheck, imgKit1, imgKit2, imgKit3,
-   imgIconClock, imgIconCalendar, imgIconDashboard
-} from '../../../assets/images'
+import { imgMobileScreen, imgListCheck, imgKit1, imgKit2, imgKit3,
+   imgIconClock, imgIconCalendar, imgIconDashboard } from '../../../assets/images'
 
 const Analytics = () => {
    const listCheckRef = useRef(null)
@@ -33,40 +30,22 @@ const Analytics = () => {
          }
       });
 
-
-      const scrollTriggerImg = {
-         trigger: `.${s.mobile_screen}`,
-         start: "bottom bottom",
-         end: "bottom bottom",
-         // markers: true,
-         scrub: 2,
+      const settingsKit = {
+         delay: 0.2,
+         opacity: 0,
+         ease: 'power3.out',
+         scrollTrigger: {
+            trigger: `.${s.mobile_screen}`,
+            start: "center 60%",
+            end: "center 65%",
+            // markers: true,
+            scrub: 4,
+         }
       }
 
-      gsap.from(listCheckRef.current, {
-         x: -150,
-         y: 150,
-         scale: 0.3,
-         opacity: 0,
-         ease: 'power3.out',
-         scrollTrigger: scrollTriggerImg
-      });
-
-      gsap.from(kit1Ref.current, {
-         x: 150,
-         scale: 0.7,
-         opacity: 0,
-         ease: 'power3.out',
-         scrollTrigger: scrollTriggerImg
-      });
-
-      gsap.from([kit2Ref.current, kit3Ref.current], {
-         x: -150,
-         y: -50,
-         opacity: 0,
-         scale: 0.7,
-         ease: 'power3.out',
-         scrollTrigger: scrollTriggerImg
-      });
+      gsap.from(listCheckRef.current, {x: -150, y: 150, scale: 0.3, ...settingsKit});
+      gsap.from(kit1Ref.current, {x: 150, scale: 0.7, ...settingsKit});
+      gsap.from([kit2Ref.current, kit3Ref.current], {x: -150, y: -50, scale: 0.7, ...settingsKit});
    }, [])
 
    return (

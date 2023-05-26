@@ -3,6 +3,8 @@ import gsap from 'gsap'
 interface ISetting {
    x?: number;
    y?: number;
+   scale?: number;
+   stagger?: number
 }
 
 const scrollTriggerTitle = (classElem:string, triggerElem:string, setting?:ISetting) => {
@@ -58,4 +60,19 @@ const scrollTriggerItems = (classElems:string, triggerElem:string, setting?:ISet
    });
 };
 
-export { scrollTriggerTitle, scrollTriggerText, scrollTriggerItems }
+const scrollTriggerSide = (classElems:string, triggerElem:string, setting?:ISetting) => {
+   gsap.from(classElems, {
+      opacity: 0,
+      duration: 4,
+      ease: 'power3.out',
+      ...setting,
+      scrollTrigger: {
+         trigger: triggerElem,
+         start: "center bottom",
+         end: "center center",
+         scrub: 5,
+      }
+   });
+}
+
+export { scrollTriggerTitle, scrollTriggerText, scrollTriggerItems, scrollTriggerSide }
