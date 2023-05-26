@@ -42,8 +42,8 @@ const scrollTriggerText = (classElem:string, triggerElem:string, setting?:ISetti
    });
 };
 
-const scrollTriggerItems = (classElems:string, triggerElem:string, setting?:ISetting) => {
-   gsap.from(classElems, {
+const scrollTriggerItems = async (classElems:string, triggerElem:string, setting?:ISetting) => {
+   await gsap.from(classElems, {
       opacity: 0,
       y: 100,
       stagger: 0.2,
@@ -60,8 +60,8 @@ const scrollTriggerItems = (classElems:string, triggerElem:string, setting?:ISet
    });
 };
 
-const scrollTriggerSide = (classElems:string, triggerElem:string, setting?:ISetting) => {
-   gsap.from(classElems, {
+const scrollTriggerSide = async (classElems:string, triggerElem:string, setting?:ISetting) => {
+   await gsap.from(classElems, {
       opacity: 0,
       duration: 4,
       ease: 'power3.out',

@@ -8,7 +8,6 @@ import { scrollTriggerTitle, scrollTriggerText, scrollTriggerItems, scrollTrigge
 const Tracker = () => {
 
    useEffect(() => {
-      scrollTriggerItems(`.${s.card}`, `.${s.cards}`)
       scrollTriggerTitle(`.${s.tracker_container} .title`, `.${s.tracker_container}`, { x: -120, y: 0 })
       scrollTriggerText(`.${s.tracker_container} .text`, `.${s.tracker_container}`)
 
@@ -16,6 +15,8 @@ const Tracker = () => {
       scrollTriggerSide('#img_darts', `.${s.cards}`, { y: 500, x: 300 });
 
       scrollTriggerItems(`.${s.imgs} .${s.img}`, `.${s.imgs}`, {scale: 0, y: -150, stagger: 0.1})
+
+      scrollTriggerItems(`.${s.card}`, `.${s.cards}`)
 
    }, [])
 
